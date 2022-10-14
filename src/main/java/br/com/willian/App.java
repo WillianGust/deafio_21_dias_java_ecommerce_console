@@ -70,7 +70,7 @@ public class App
         //   System.out.println(num + " x " + i + " = " + (num * i));
         // }
 
-        System.out.println("=====[TABUADA]=========");
+       /* System.out.println("=====[TABUADA]=========");
         System.out.println("Digite um numero que voce deseja ver na tabuada");
           int num = Integer.parseInt(reader.readLine());
         System.out.println("Digite a quantidade de vezes que quer multiplicar a tabuada");
@@ -79,7 +79,7 @@ public class App
 
         for(int i=0; i<=fator;i++){
           System.out.println(num + " x " + i + " = " + (num * i));
-        }
+        }*/
 
 
         // System.out.println("==============[ CALCULO PRODUTO/CLIENTE]==============");
@@ -117,16 +117,7 @@ public class App
          
 
         // Exercicio dia 4
-        // BufferedReader reader = new BufferedReader(
-        //     new InputStreamReader(System.in));
-        //     System.out.println("Digite um numero x: ");
-        //     int x = Integer.parseInt(reader.readLine());
-        //     System.out.println("Digite um numero y: ");
-        //     int y = Integer.parseInt(reader.readLine());
-            
-        //     var resultado = (x * 8 + y) - x + y / 100;
-        //     System.out.println("(" + x + " * 8 - " + y + ") - " + x + " + " + y + " / 100");
-        //     System.out.println("O resultado da equacao e de : " + resultado);
+        // 
 
             // System.out.println("Digite um numero: ");
             // int numero = Integer.parseInt(reader.readLine());
@@ -140,14 +131,32 @@ public class App
             // var nome = reader.readLine();
             // System.out.println("O nome digitado foi : " + nome);
  
-        // Reading data using readLine
-        // String name = reader.readLine();
-
-        // int numero1 = 3;
-        // var numero2 = 5;
-
-        // int soma = numero1 + numero2;
-
-        // System.out.println( "O resultado da operacao e: " + soma );
+        // Criando Funcao
+        // equacaoCalculo();
+        //aula1 ();
     }
-}
+
+    private static void equacaoCalculo() throws NumberFormatException, IOException {
+      BufferedReader reader = new BufferedReader(
+            new InputStreamReader(System.in));
+            System.out.println("Digite um numero x: ");
+            int x = Integer.parseInt(reader.readLine());
+            System.out.println("Digite um numero y: ");
+            int y = Integer.parseInt(reader.readLine());
+            
+            var resultado = (x * 8 + y) - x + y / 100;
+            System.out.println("(" + x + " * 8 - " + y + ") - " + x + " + " + y + " / 100");
+            System.out.println("O resultado da equacao e de : " + resultado);
+    }
+
+    private static void aula1() {
+      // Reading data using readLine
+
+        int numero1 = 3;
+        var numero2 = 5;
+
+        int soma = numero1 + numero2;
+
+        System.out.println( "O resultado da operacao e: " + soma );
+    }
+} 
