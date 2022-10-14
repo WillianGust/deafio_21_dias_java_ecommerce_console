@@ -4,12 +4,12 @@ import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStreamReader;
 
-import javax.print.attribute.IntegerSyntax;
-
 public class App 
 {
     public static void main( String[] args ) throws IOException
     {
+      BufferedReader reader = new BufferedReader(new InputStreamReader(System.in));
+
 
       // Dia 5 - Tipo primitivos variaveis
 
@@ -54,43 +54,65 @@ public class App
          * --------------------
          * Cliente: Joao
          * Endereco: Rua ...
-         * Comprou o material: XXXXno valor de XXX
+         * Comprou o material: XXXXno valor de 
          * O valor total da compra foi : R& XXXX
          * -------------------
          */
-        BufferedReader reader = new BufferedReader(new InputStreamReader(System.in));
 
-        System.out.println("==============[ CALCULO PRODUTO/CLIENTE]==============");
-        // System.out.println("Ola Joao seja muito bem vindo, comecemos?");
-        System.out.println("Digite o nome do seu cliente ");
-        var nome = reader.readLine();
+        //  Tabuada
+        
+        // System.out.println("=====[TABUADA]=========");
+        // System.out.println("Digite um numero");
+        
+        //   int num = Integer.parseInt(reader.readLine());
 
-        System.out.println("Digite o endereco do seu cliente ");
-        var endereco = reader.readLine();
+        // for(int i=0; i<=10;i++){
+        //   System.out.println(num + " x " + i + " = " + (num * i));
+        // }
 
-        System.out.println("Digite o nome do produto ");
-        var produto = reader.readLine();
+        System.out.println("=====[TABUADA]=========");
+        System.out.println("Digite um numero que voce deseja ver na tabuada");
+          int num = Integer.parseInt(reader.readLine());
+        System.out.println("Digite a quantidade de vezes que quer multiplicar a tabuada");
+          int fator = Integer.parseInt(reader.readLine());
+        
 
-        System.out.printf("Digite o valor do produto (%s):", produto);
-        var valor = Double.parseDouble(reader.readLine());
-
-        System.out.printf("Digite a quantidade do produto (%s):", produto);
-        var quantidade = Integer.parseInt(reader.readLine());
-
-        var valorTotal = valor * quantidade;
-       
-       
-        System.out.println("----------------------------------");
-
-        System.out.printf("Cliente: %s \n", nome);
-        System.out.printf("Endereco: %s \n", endereco);
-        System.out.printf("Comprou o material: %s valor de R$ %s \n", produto, valor);
-        System.out.printf("O valor total da compra foi : R$ %.2f \n", valorTotal);
-        if(valorTotal > 100){
-          System.out.printf("O pedido foi maior que R$ 100,00, voce tera um desconto em sua proxima compra conosco \n");
+        for(int i=0; i<=fator;i++){
+          System.out.println(num + " x " + i + " = " + (num * i));
         }
 
-        System.out.println("----------------------------------");
+
+        // System.out.println("==============[ CALCULO PRODUTO/CLIENTE]==============");
+        // // System.out.println("Ola Joao seja muito bem vindo, comecemos?");
+        // System.out.println("Digite o nome do seu cliente ");
+        // var nome = reader.readLine();
+
+        // System.out.println("Digite o endereco do seu cliente ");
+        // var endereco = reader.readLine();
+
+        // System.out.println("Digite o nome do produto ");
+        // var produto = reader.readLine();
+
+        // System.out.printf("Digite o valor do produto (%s):", produto);
+        // var valor = Double.parseDouble(reader.readLine());
+
+        // System.out.printf("Digite a quantidade do produto (%s):", produto);
+        // var quantidade = Integer.parseInt(reader.readLine());
+
+        // var valorTotal = valor * quantidade;
+       
+       
+        // System.out.println("----------------------------------");
+
+        // System.out.printf("Cliente: %s \n", nome);
+        // System.out.printf("Endereco: %s \n", endereco);
+        // System.out.printf("Comprou o material: %s valor de R$ %s \n", produto, valor);
+        // System.out.printf("O valor total da compra foi : R$ %.2f \n", valorTotal);
+        // if(valorTotal > 100){
+        //   System.out.printf("O pedido foi maior que R$ 100,00, voce tera um desconto em sua proxima compra conosco \n");
+        // }
+
+        // System.out.println("----------------------------------");
 
          
 
