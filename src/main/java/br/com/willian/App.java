@@ -137,35 +137,48 @@ public class App
         // Criando Funcao
         // equacaoCalculo();
         //aula1 ();
-        exercicioAlunosEscola();
+        // exercicioAlunosEscola();
+
+        
+        var alunoDaniel = new Aluno();
+        alunoDaniel.setNome("Daniel");
+        alunoDaniel.getNotas().add(7.9);
+        alunoDaniel.getNotas().add(9.9);
+
+        var alunoAna = new Aluno();
+        alunoAna.setNome("Ana");
+        alunoAna.getNotas().add(6.0);
+        alunoAna.getNotas().add(10.0);
+
+        alunoDaniel.media();
+        alunoDaniel.situacao();
+        alunoAna.media();
+        alunoAna.situacao();
+
+        System.out.println(alunoDaniel.media());
+        System.out.println(alunoDaniel.situacao());
+
+        System.out.println(alunoAna.media());
+        System.out.println(alunoAna.situacao());
     }
+    
 
     private static void exercicioAlunosEscola() {
       Scanner ler = new Scanner(System.in);
-    	List<String[]> alunos = new ArrayList<String[]>();
+    	List<Aluno> alunos = new ArrayList<Aluno>();
     	
     	do {
             //		Coleta
-            String[] dados = new String[7];
-            double soma = 0.0;
-            double media = 0.0;
+            Aluno aluno = new Aluno();
+            
             System.out.println("Digite o nome do aluno");
-            dados[0] = ler.next();
+            aluno.setNome(ler.next());
             for(int i = 1; i <= 4; i++) {
                 System.out.println("Digite a nota "+i+": ");
-                dados[i] = ler.next();
-                soma += Double.parseDouble(dados[i]);
+                aluno.getNotas().add(ler.nextDouble());
             }
             
-            //    	Lógica
-            media = soma / 4 ;
-            dados[6] = String.valueOf(media);
-            if(media >= 7)dados[5] = "Aprovado";
-            else if(media >= 5 && media < 7)dados[5] = "Recuperação";
-            else dados[5] = "Reprovado";
-            
-            //    	Armazenamento
-            alunos.add(dados);
+            alunos.add(aluno);
             
             //    	adição?
             System.out.println("Adicionar novo usuário: \nSim ou Não");
@@ -176,11 +189,11 @@ public class App
     	
         //    	Visualização
     	System.out.println("#".repeat(10)+"[ Relatório ]"+"#".repeat(10));
-    	for(String[] aluno: alunos) {
-    		System.out.println("Nome: "+ aluno[0]+"\n"
-    				+ "Notas: "+ aluno[1]+", "+aluno[2]+", "+aluno[3]+", "+aluno[4]+"\n"
-    				+ "Média: "+aluno[6]+"\n"
-    				+ "Situação: "+aluno[5]+"\n");
+    	for(Aluno aluno: alunos) {
+    		System.out.println("Nome: "+ aluno.getNome()+"\n"
+    				+ "Notas: "+ aluno.notasFormatada()+ "\n"
+    				+ "Média: " + aluno.media() + "\n"
+    				+ "Situação: "+aluno.situacao() + "\n");
     	}
     	System.out.println("#".repeat(33)+"\n");
     }

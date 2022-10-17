@@ -29,8 +29,9 @@ public class Aluno {
     }
 
     public String situacao(){
-      if (this.media() >= 7) return "Aprovado";
-      else if (this. media() >= 5 && this.media() <=6) return "Recuperacao";
+      var media = this.media();
+      if ( media >= 7) return "Aprovado";
+      else if (media >= 5 && media <=6) return "Recuperacao";
       else return "Reprovado";
     }
 
