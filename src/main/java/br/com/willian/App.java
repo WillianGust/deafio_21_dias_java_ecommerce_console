@@ -3,6 +3,9 @@ package br.com.willian;
 import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStreamReader;
+import java.util.ArrayList;
+import java.util.List;
+import java.util.Scanner;
 
 public class App 
 {
@@ -134,6 +137,52 @@ public class App
         // Criando Funcao
         // equacaoCalculo();
         //aula1 ();
+        exercicioAlunosEscola();
+    }
+
+    private static void exercicioAlunosEscola() {
+      Scanner ler = new Scanner(System.in);
+    	List<String[]> alunos = new ArrayList<String[]>();
+    	
+    	do {
+            //		Coleta
+            String[] dados = new String[7];
+            double soma = 0.0;
+            double media = 0.0;
+            System.out.println("Digite o nome do aluno");
+            dados[0] = ler.next();
+            for(int i = 1; i <= 4; i++) {
+                System.out.println("Digite a nota "+i+": ");
+                dados[i] = ler.next();
+                soma += Double.parseDouble(dados[i]);
+            }
+            
+            //    	Lógica
+            media = soma / 4 ;
+            dados[6] = String.valueOf(media);
+            if(media >= 7)dados[5] = "Aprovado";
+            else if(media >= 5 && media < 7)dados[5] = "Recuperação";
+            else dados[5] = "Reprovado";
+            
+            //    	Armazenamento
+            alunos.add(dados);
+            
+            //    	adição?
+            System.out.println("Adicionar novo usuário: \nSim ou Não");
+            String opcao = ler.next();
+            if(opcao.toLowerCase().equals("nao")) break;
+            
+    	}while(true);
+    	
+        //    	Visualização
+    	System.out.println("#".repeat(10)+"[ Relatório ]"+"#".repeat(10));
+    	for(String[] aluno: alunos) {
+    		System.out.println("Nome: "+ aluno[0]+"\n"
+    				+ "Notas: "+ aluno[1]+", "+aluno[2]+", "+aluno[3]+", "+aluno[4]+"\n"
+    				+ "Média: "+aluno[6]+"\n"
+    				+ "Situação: "+aluno[5]+"\n");
+    	}
+    	System.out.println("#".repeat(33)+"\n");
     }
 
     private static void equacaoCalculo() throws NumberFormatException, IOException {
